@@ -1,0 +1,12 @@
+<div class="modal fade" id="alertModal" tabindex="-1" role="dialog" style="z-index:9999999"
+     aria-labelledby="alertLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div ng-class="{'modal-header':true, 'warning': alertStatus === 0, 'success': alertStatus === 1}"></div>
+            <div class="modal-body text-center">
+                <div ng-bind="content" ng-class="{'warning': alertStatus === 0, 'success': alertStatus === 1}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
