@@ -18,6 +18,7 @@
 **3.[日期选择(依赖Bootstrap)](demo/directive/date-time-picker.html)**  
  
 对dateTimePicker插件的二次封装，原插件地址[bootstrap-datetimepicker](http://www.bootcss.com/p/bootstrap-datetimepicker/)  
+  
 ![dateTimePicker](directive/date-time-picker/img/date-time-picker.jpg)
 
 **4.[回车监听](demo/directive/enter-click.html)**  
