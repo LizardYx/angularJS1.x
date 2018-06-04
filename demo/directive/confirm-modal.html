@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div ng-controller="confirmModalController">
+<div ng-controller="ConfirmModalController">
     <button type="button" class="btn btn-default" ng-click="submit()">提交</button>
     <confirm-modal confirm-title="confirmModal.title" content="confirmModal.content"
                    callback-fn="confirmModal.callbackFn()">
@@ -22,7 +22,7 @@
 <script type="text/javascript" src="../app.js"></script>
 <script type="text/javascript" src="../../directive/confirm-modal/confirm-modal.js"></script>
 <script>
-    app.controller('confirmModalController', ['$scope', function ($scope) {
+    app.controller('ConfirmModalController', ['$scope', function ($scope) {
         $scope.confirmModal = {
             title: '',
             content: '',

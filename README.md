@@ -6,4 +6,6 @@
 
 **2.[确认弹出框(依赖Bootstrap)](demo/directive/confirm-modal.html)**
 
-**2.[日期选择(依赖Bootstrap)](demo/directive/date-time-picker.html)**
+**3.[日期选择(依赖Bootstrap)](demo/directive/date-time-picker.html)**
+
+**4.[回车监听](demo/directive/enter-click.html)**

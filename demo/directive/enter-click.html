@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enterClick</title>
+
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" media="screen">
+</head>
+<body>
+
+<div ng-controller="EnterClickController">
+    <div class="col-xs-offset-5 col-xs-2">
+        <input type="text" class="form-group col-xs-12" enter-click="submit()">
+        <input type="text" class="form-group col-xs-12" enter-click="submit()">
+        <button type="button" class="btn" ng-click="submit()">提交</button>
+    </div>
+</div>
+<script type="text/javascript" src="../lib/angular.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../app.js"></script>
+<script type="text/javascript" src="../../directive/enter-click.js"></script>
+<script>
+    app.controller('EnterClickController', ['$scope', function ($scope) {
+        $scope.submit = function () {
+            alert('提交成功');
+        }
+    }])
+</script>
+</body>
+</html>
