@@ -35,13 +35,6 @@
                             initialDate: $scope.date ? $scope.date : new Date()
                         }).on('changeDate', function (event) {
                             $scope.date = $filter('date')(event.date, 'yyyy-MM-dd HH:mm');
-                            // var year = event.date.getFullYear();
-                            // var month = event.date.getMonth();
-                            // var day = event.date.getDate();
-                            // var hours = event.date.getHours();
-                            // var minutes = event.date.getMinutes();
-                            //
-                            // $scope.date = `${year}/${month + 1}/${day} ${hours}:${minutes}`;
                             $scope.ctrlFn();
                             $scope.$apply();
                         });

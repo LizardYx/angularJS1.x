@@ -6,9 +6,9 @@
             restrict: 'E',
             replace: true,
             scope: {
-                confirmTitle: '=',
-                content: '=',
-                ctrlFn: '&callbackFn'
+                confirmTitle: '=', //提示框标题
+                content: '=', //提示框内容
+                ctrlFn: '&callbackFn' //确定按钮回调事件，点击确定按钮触发
             },
             templateUrl: '../../directive/confirm-modal/confirm-modal-directive.html',
             controller: function ($scope, $element) {

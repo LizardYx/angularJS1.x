@@ -11,10 +11,10 @@
 <body>
 
 <div ng-controller="alertModalController">
-    <input type="text" ng-model="alertModal.content">
     <alert-modal content='alertModal.content' close-time="alertModal.closeTime"
                  alert-status="alertModal.alertStatus">
     </alert-modal>
+    <button type="button" class="btn" ng-click="submit()">提交</button>
 </div>
 <script type="text/javascript" src="../lib/angular.min.js"></script>
 <script type="text/javascript" src="../lib/jquery.min.js"></script>
@@ -24,10 +24,18 @@
 <script>
     app.controller('alertModalController', ['$scope', function ($scope) {
         $scope.alertModal = {
-            content: '正确提示',
+            content: '',
             closeTime: 2000,
             alertStatus: 1  //0 || 1
-        }
+        };
+        
+        $scope.submit = function () {
+            $scope.alertModal = {
+                content: '正确提示',
+                closeTime: 2000,
+                alertStatus: 1  //0 || 1
+            };
+        };
     }])
 </script>
 </body>

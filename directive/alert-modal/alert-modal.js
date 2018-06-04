@@ -6,9 +6,9 @@
             restrict: 'E',
             replace: true,
             scope: {
-                content: '=',
-                closeTime: '=',
-                alertStatus: '='
+                content: '=', // when content change, show alert modal
+                closeTime: '=', // close alert modal time
+                alertStatus: '=' // 0-error alert modal, 1-success alert modal
             },
             templateUrl: '../../directive/alert-modal/alert-modal-directive.html',
             controller: function ($scope, $element) {
