@@ -17,7 +17,7 @@
                 pickerPosition: '=',
                 ctrlFn: '&callbackFn'
             },
-            templateUrl: 'common/directives/template/date-time-picker.html',
+            templateUrl: '../../directive/date-time-picker/date-time-picker-directive.html',
             controller: function ($scope, $element) {
 
                 var initDateTimePicker = $scope.$watch('date', function (newValue) {
@@ -34,7 +34,7 @@
                             pickerPosition: $scope.pickerPosition ? $scope.pickerPosition : 'bottom-right',
                             initialDate: $scope.date ? $scope.date : new Date()
                         }).on('changeDate', function (event) {
-                            $scope.date = $filter('date')(event.date, 'yyyy-MM-dd HH:mm:ss');
+                            $scope.date = $filter('date')(event.date, 'yyyy-MM-dd HH:mm');
                             // var year = event.date.getFullYear();
                             // var month = event.date.getMonth();
                             // var day = event.date.getDate();
