@@ -19,4 +19,10 @@
 ![dateTimePicker](directive/date-time-picker/img/date-time-picker.jpg)
 
 **4.[回车监听](demo/directive/enter-click.html)**  
-对回车键添加监听，点击时触发事件
+对回车键添加监听，点击时触发事件  
+  
+**4.[input-group](demo/directive/input-group.html)**
+默认显示文，点击icon进入编辑状态，出现input输入框（回车键支持调用回调时间）  
+  
+![input-group](directive/input-group/img/input-group.jpg)
+![input-group-edit](directive/input-group/img/input-group-edit.jpg)
