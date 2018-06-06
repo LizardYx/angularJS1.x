@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inputGroup</title>
+
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../lib/font-awesome.min.css" media="screen">
+</head>
+<body>
+<div ng-controller="InputGroupController" class="col-sm-offset-5">
+    <div ng-repeat="userNameObj in userNameList" style="width: 300px;height: 30px">
+        <input-group item-id="{{userNameObj.id}}" model="{{userNameObj.name}}"
+                     callback-fn="updateName(id, name)">
+        </input-group>
+    </div>
+</div>
+
+<script type="text/javascript" src="../lib/angular.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../app.js"></script>
+<script type="text/javascript" src="../../directive/input-group/input-group.js"></script>
+<script>
+    app.controller('InputGroupController', ['$scope', function ($scope) {
+        $scope.userNameList = [{
+            id: 1,
+            name: '张三'
+        },{
+            id: 2,
+            name: '李四'
+        }];
+        
+        $scope.updateName = function (id, name) {
+            for (var i = 0; i < $scope.userNameList.length; i++) {
+                var userNameObj = $scope.userNameList[i];
+
+                if (userNameObj.id === parseInt(id)) {
+                    userNameObj.name = name;
+                    break;
+                }
+            }
+        };
+    }])
+</script>
+</body>
+</html>

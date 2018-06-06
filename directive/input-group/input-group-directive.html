@@ -1,0 +1,10 @@
+<div class="input-model">
+    <input type="text" maxlength="20" ng-model="model" class="form-control input-sm" style="display: inline-block;width: auto"
+           ng-change="updateNames(model)" ng-keypress="enter($event)" ng-if="canEdit">
+    <i class="cursor-pointer fa fa-check" ng-if="canEdit" ng-click="ctrlFn({id: itemId, name: name})"></i>
+    <i class="cursor-pointer fa fa-times" ng-if="canEdit" ng-click="updateStatus(false)"></i>
+    <div ng-if="!canEdit">
+        <span ng-click="updateStatus(true)">{{model}}</span>
+        <i class="mar-lft fa fa-pencil-square-o cursor-pointer" ng-if="!canEdit" ng-click="updateStatus(true)"></i>
+    </div>
+</div>
