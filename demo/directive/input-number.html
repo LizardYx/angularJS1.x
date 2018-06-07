@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inputNumber</title>
+
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" media="screen">
+</head>
+<body>
+<div ng-controller="InputNumberController" class="col-sm-offset-5">
+    <input type="text" ng-model="user.age" input-number min-size="1" max-size=user.maxAge model=user.age
+           callback-fn="callback()">
+</div>
+
+<script type="text/javascript" src="../lib/angular.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../app.js"></script>
+<script type="text/javascript" src="../../directive/input-number.js"></script>
+<script>
+    app.controller('InputNumberController', ['$scope', function ($scope) {
+        $scope.user = {
+            name: '张三',
+            age: '',
+            maxAge: '100'
+        };
+        
+        $scope.callback = function () {
+            alert($scope.user.name + $scope.user.age + '岁');
+        };
+    }])
+</script>
+</body>
+</html>

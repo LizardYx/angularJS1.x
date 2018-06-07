@@ -21,8 +21,11 @@
 **4.[回车监听](demo/directive/enter-click.html)**  
 对回车键添加监听，点击时触发事件  
   
-**4.[input-group](demo/directive/input-group.html)**  
-默认显示文本，点击icon进入编辑状态，出现input输入框（回车键支持调用回调事件）  
+**5.[input-group](demo/directive/input-group.html)**  
+默认显示文本，点击icon进入编辑状态，出现input输入框（支持回车键执行回调事件）  
   
 ![input-group](directive/input-group/img/input-group.png)  
-![input-group-edit](directive/input-group/img/input-group-edit.png)
+![input-group-edit](directive/input-group/img/input-group-edit.png)  
+
+**6.[input-group](demo/directive/input-group.html)**  
+限制文本框只能输入数字，可设置最小值和最大值，通过 `key up` 事件监听当1.5秒内没有输入则执行回调函数
