@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagination</title>
+
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" media="screen">
+</head>
+<body>
+<div ng-controller="PaginationController" class="col-sm-offset-5">
+    <div>当前页数：{{pagination.pageNo}}</div>
+    <div class="pagination-bar">
+        <pagination id="pagination" items="pagination.totalItem"
+                    items-on-page="pagination.pageSize" callback-fn="updateCurrentPage(pageNo)"
+                    current-page="pagination.pageNo">
+        </pagination>
+    </div>
+</div>
+
+<script type="text/javascript" src="../lib/angular.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../lib/jquery.simplePagination.js"></script>
+<script type="text/javascript" src="../app.js"></script>
+<script type="text/javascript" src="../../directive/pagination/pagination.js"></script>
+<script>
+    app.controller('PaginationController', ['$scope', '$timeout', function ($scope, $timeout) {
+        $scope.pagination = {
+            pageSize: 10,
+            totalItem: 0,
+            pageNo: 1
+        };
+
+        // use async restful update totalItem
+        $timeout(function () {
+            $scope.pagination.totalItem = 50;
+        });
+
+        // use async restful update totalItem
+        $scope.updateCurrentPage = function (pageNo) {
+            $scope.pagination.pageNo = pageNo;
+            $scope.$apply();
+        };
+    }])
+</script>
+</body>
+</html>
