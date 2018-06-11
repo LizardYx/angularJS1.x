@@ -32,4 +32,5 @@
   
 **7.[pagination](demo/directive/pagination.html)**  
 分页管理，通过每页显示数量/总item数/当前页数实现分页管理  
+
 ![pagination](directive/pagination/img/pagination.jpg)  
