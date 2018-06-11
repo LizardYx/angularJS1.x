@@ -7,9 +7,9 @@
             replace: true,
             scope: {
                 id: '@',
-                items: '=',
-                itemsOnPage: '=',
-                currentPage: '=',
+                items: '=', //总数
+                itemsOnPage: '=', //每页显示数
+                currentPage: '=', //当前页
                 ctrlFn: '&callbackFn'
             },
             template: '<ul class="pagination simple-pagination"></ul>',

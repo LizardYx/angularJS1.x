@@ -31,6 +31,6 @@
 限制文本框只能输入数字，可设置最小值和最大值，通过 `key up` 事件监听当1.5秒内没有输入则执行回调函数
   
 **7.[pagination](demo/directive/pagination.html)**  
-分页管理，通过每页显示数量/总item数/当前页数实现分页管理  
+分页管理，通过每页显示数量/总item数/当前页数实现分页管理，支持点击跳页执行回调函数
 
 ![pagination](directive/pagination/img/pagination.jpg)  
