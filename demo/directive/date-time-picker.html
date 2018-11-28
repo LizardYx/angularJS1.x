@@ -6,28 +6,63 @@
     <title>dateTimePicker</title>
 
     <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="../lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" media="screen">
+    <link rel="stylesheet" href="../lib/font-awesome.min.css" media="screen">
+    <link rel="stylesheet" href="../lib/bootstrap-datepicker/bootstrap-datepicker.min.css" media="screen">
 </head>
 <body>
 
 <div ng-controller="DTPickerController" class="col-xs-offset-4">
-    <div style="width: 300px;height: 40px">
-        <date-time-picker id="publishDate" format="'yyyy-mm-dd hh:ii'" date="DTPicker.current" min-date="DTPicker.current"
-                          class="date-choose" style="width: 300px;height: 40px">
-        </date-time-picker>
+    <div class="input-group" style="width: 400px">
+        <input type="text" class="form-control" id="start-picker" dp-id="'start-picker'"
+               date="DTPicker.filter.start" max-date="DTPicker.filter.end"
+               callback-fn="updateTimeFilter()" placeholder="开始时间" date-picker>
+        <span class="input-group-addon">到</span>
+        <input type="text" class="form-control" id="end-picker" dp-id="'end-picker'"
+               date="DTPicker.filter.end" min-date="DTPicker.filter.start"
+               callback-fn="updateTimeFilter()" placeholder="结束时间" date-picker>
+        <span class="input-group-addon cursor-pointer" ng-click="clearTimeFilter()">
+            <i class="fa fa-close"></i>
+        </span>
     </div>
 </div>
 <script type="text/javascript" src="../lib/angular.min.js"></script>
 <script type="text/javascript" src="../lib/jquery.min.js"></script>
 <script type="text/javascript" src="../lib/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="../lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="../lib/bootstrap-datetimepicker/language/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../lib/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 <script type="text/javascript" src="../app.js"></script>
-<script type="text/javascript" src="../../directive/date-time-picker/date-time-picker.js"></script>
+<script type="text/javascript" src="../../directive/date-picker/date-picker.js"></script>
 <script>
     app.controller('DTPickerController', ['$scope', function ($scope) {
         $scope.DTPicker = {
-            current: ''
+            filter: {
+                start: '',
+                end: ''
+            }
+        };
+
+        $scope.updateTimeFilter = function () {
+            var filterObj = $scope.DTPicker.filter;
+
+            if (filterObj.start && filterObj.end) {
+                alert('执行过滤');
+            }
+        };
+
+        $scope.clearTimeFilter = function () {
+            var filterObj = $scope.DTPicker.filter;
+
+            if (filterObj.start && filterObj.end) {
+                $scope.DTPicker.filter = {
+                    start: '',
+                    end: ''
+                };
+                alert('执行过滤');
+            }else {
+                $scope.DTPicker.filter = {
+                    start: '',
+                    end: ''
+                };
+            }
         };
     }])
 </script>
