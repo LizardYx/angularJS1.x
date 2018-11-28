@@ -14,7 +14,7 @@
 ![confirm-modal](directive/confirm-modal/img/confirm-modal.jpg)
 
 **3.[日期选择(依赖Bootstrap)](demo/directive/date-time-picker.html)**  
-对dateTimePicker插件的二次封装，原插件地址[bootstrap-datetimepicker](http://www.bootcss.com/p/bootstrap-datetimepicker/)  
+对bootstrap-datepicker插件的二次封装，原插件地址[bootstrap-datepicker](https://github.com/uxsolutions/bootstrap-datepicker)  
   
 ![dateTimePicker](directive/date-picker/img/date-picker.jpg)
 
