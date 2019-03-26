@@ -18,28 +18,36 @@
                     return Object.prototype.toString.call(target).slice(8, -1);
                 };
 
+                scope.validateValue = function () {
+                    newValue = parseInt(attrs.$$element[0].value);
+                    if (!isNaN(newValue) && scope.getType(newValue) === 'Number') {
+                        if (newValue < scope.minSize) {
+                            scope.model = scope.minSize;
+                        }else if (newValue > scope.maxSize) {
+                            scope.model = scope.maxSize + '';
+                        }else {
+                            scope.model = newValue + '';
+                        }
+                    }else {
+                        attrs.$$element[0].value = '';
+                        scope.model = '';
+                        return false;
+                    }
+                    scope.$apply();
+                    scope.ctrlFn();
+                };
+
                 element.bind('keyup', function () {
                     if (scope.delayUpdate) {
                         $timeout.cancel(scope.delayUpdate);
                     }
                     scope.delayUpdate = $timeout(function () {
-                        newValue = parseInt(attrs.$$element[0].value);
-                        if (!isNaN(newValue) && scope.getType(newValue) === 'Number') {
-                            if (newValue < scope.minSize) {
-                                scope.model = scope.minSize;
-                            }else if (newValue > scope.maxSize) {
-                                scope.model = scope.maxSize + '';
-                            }else {
-                                scope.model = newValue + '';
-                            }
-                        }else {
-                            attrs.$$element[0].value = '';
-                            scope.model = '';
-                            return false;
-                        }
-                        scope.$apply();
-                        scope.ctrlFn();
+                        scope.validateValue();
                     }, 1500);
+                });
+
+                element.bind('blur', function () {
+                    scope.validateValue();
                 });
             }
         }

@@ -25,6 +25,11 @@
                         $scope.init();
                     }
                 });
+                $scope.$watch('currentPage', function (newValue, oldValue) {
+                    if (newValue !== oldValue) {
+                        $scope.init();
+                    }
+                });
 
                 $scope.init = function () {
                     $('#' + $scope.id).pagination({

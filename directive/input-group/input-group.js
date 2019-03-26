@@ -8,6 +8,7 @@
             scope: {
                 itemId: '@',
                 model: '@',
+                maxLen: '=',
                 ctrlFn: '&callbackFn'
             },
             templateUrl: '../../directive/input-group/input-group-directive.html',
