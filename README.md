@@ -28,3 +28,17 @@
 分页管理，通过每页显示数量/总item数/当前页数实现分页管理，支持点击跳页执行回调函数
 
 ![pagination](directive/pagination/img/pagination.jpg)  
+
+###小技巧
+**1.[Restful请求异步封装](demo/asynRestful.js)**
+
+**2.全球唯一标识符
+```
+$scope.getGuid = function () {
+    function s4() {
+        return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
+};
+```
