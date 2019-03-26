@@ -29,7 +29,7 @@
 
 ![pagination](directive/pagination/img/pagination.jpg)  
 
-###小技巧
+### 小技巧
 **1.[Restful请求异步封装](demo/asynRestful.js)**
 
 **2.全球唯一标识符
